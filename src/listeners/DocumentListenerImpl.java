@@ -10,6 +10,7 @@ import ProjectInfo.ClassMethodPair;
 import ProjectInfo.MethodInfo;
 import TestOperations.TestModel;
 import com.intellij.ide.highlighter.JavaFileType;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.editor.event.DocumentEvent;
 import com.intellij.openapi.editor.event.DocumentListener;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -63,18 +64,19 @@ public class DocumentListenerImpl implements DocumentListener {
 
             PsiJavaFile psiJavaFile = (PsiJavaFile) file;
             PsiClass[] javaClasses = psiJavaFile.getClasses();
-
-            for (ClassInfo old : oldFiles) {
-                for (PsiClass psiClass : javaClasses) {
-                    if (old.toString().equals(psiClass.getQualifiedName())) {
-                        ArrayList<MethodInfo> oldMethods = old.getClassMethods();
-                        PsiMethod[] newMethods = psiClass.getAllMethods();  //tu byva error
-                        for (MethodInfo oldMethod : oldMethods) {
-                            for (PsiMethod newMethod : newMethods) {
-                                if(newMethod.getName().equals(oldMethod.getMethodName())){
-                                    if(!newMethod.getText().equals(oldMethod.getMethodBody())) {
-                                        if (!TestModel.findClassMethodPair(new ClassMethodPair(old.toString(), newMethod.getName()))) {
-                                            TestModel.addModifiedClassMethod(new ClassMethodPair(old.toString(), newMethod.getName()));
+            ApplicationManager.getApplication().runReadAction( () -> {
+                for (ClassInfo old : oldFiles) {
+                    for (PsiClass psiClass : javaClasses) {
+                        if (old.toString().equals(psiClass.getQualifiedName())) {
+                            ArrayList<MethodInfo> oldMethods = old.getClassMethods();
+                            PsiMethod[] newMethods = psiClass.getAllMethods();  //tu byva error
+                            for (MethodInfo oldMethod : oldMethods) {
+                                for (PsiMethod newMethod : newMethods) {
+                                    if (newMethod.getName().equals(oldMethod.getMethodName())) {
+                                        if (!newMethod.getText().equals(oldMethod.getMethodBody())) {
+                                            if (!TestModel.findClassMethodPair(new ClassMethodPair(old.toString(), newMethod.getName()))) {
+                                                TestModel.addModifiedClassMethod(new ClassMethodPair(old.toString(), newMethod.getName()));
+                                            }
                                         }
                                     }
                                 }
@@ -82,10 +84,9 @@ public class DocumentListenerImpl implements DocumentListener {
                         }
                     }
                 }
-            }
+            });
         }
     }
-
 
     private boolean isJavaProjectFile(VirtualFile virtualFile) {
         return virtualFile.getPath()
@@ -96,5 +97,4 @@ public class DocumentListenerImpl implements DocumentListener {
     private int getLineNumber(String fileContent, int offset) {
         return StringUtils.countMatches(fileContent.substring(0, offset), "\n");
     }
-
 }

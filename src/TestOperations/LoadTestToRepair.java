@@ -15,41 +15,39 @@ public class LoadTestToRepair {
 
     public static void prepareTestsForRepair(){
 
-        try {
-            Map<Integer, ClassMethodPair> modifiedClassMethods = TestModel.getModifiedClassMethods();
-            for (Iterator<ClassMethodPair> iterator = modifiedClassMethods.values().iterator(); iterator.hasNext();) {
-                ClassMethodPair classMethodPair = iterator.next();
-                try {
+        Map<Integer, ClassMethodPair> modifiedClassMethods = TestModel.getModifiedClassMethods();
+        for ( Iterator<ClassMethodPair> iterator = modifiedClassMethods.values().iterator(); iterator.hasNext();) {
+            ClassMethodPair classMethodPair = iterator.next();
+            try {
+                ApplicationManager.getApplication().runReadAction( () -> {
+                    ArrayList<PsiMethod> testPsiMethods = TestCoverageInformations.getTestMethodsNameByMethodName(classMethodPair.toString());
+                    if (testPsiMethods != null) {
+                        for (PsiMethod testPsiMethod : testPsiMethods) {
+                            String result = JUnit.executeTest(testPsiMethod.getContainingClass().getName() + "#" + testPsiMethod.getName());
+                            if (result != null) {
+                                System.out.println("Test Name : [" + testPsiMethod.getName() + "]");
+                                System.out.println("Return type : [" + getExpectedTypeFromMethod(testPsiMethod) + "] expected value : [" + result + "]");
 
-                    ApplicationManager.getApplication().runReadAction( () -> {
-                        ArrayList<PsiMethod> testPsiMethods = TestCoverageInformations.getTestMethodsNameByMethodName(classMethodPair.toString());
-                        if (testPsiMethods != null) {
-                            for (PsiMethod testPsiMethod : testPsiMethods) {
-                                String result = JUnit.executeTest(testPsiMethod.getContainingClass().getName() + "#" + testPsiMethod.getName());
-                                //System.out.println(testPsiMethod.getContainingClass().getName()+"#"+testPsiMethod.getName());
-                                if (result != null) {//TODO zisti return type + meno asercie
-                                    System.out.println("Test Name : [" + testPsiMethod.getName() + "]");
-                                    System.out.println("Return type : [" + getExpectedTypeFromMethod(testPsiMethod) + "] expected value : [" + result + "]");
-
-                                    String correctValue = prepareExpectedValueByPsiType(result, getExpectedTypeFromMethod(testPsiMethod));
-                                    TestModel.addTestMethodToRepair(new TestMethodInfo(testPsiMethod,correctValue));
-                                }
+                                String correctValue = prepareExpectedValueByPsiType(result, getExpectedTypeFromMethod(testPsiMethod));
+                                if(correctValue == null)
+                                    correctValue = "null";
+                                TestModel.addTestMethodToRepair(new TestMethodInfo(testPsiMethod,correctValue));
                             }
                         }
-                        iterator.remove();
-                    });
-                } catch (Exception e) {
-                    System.out.println("TestLoadPsiMethodError --- " + e.getMessage());
-                }
+                    }
+                    iterator.remove();
+                });
+            } catch (Exception e) {
+                System.out.println("repairTestPsiMethodError --- " + e.getMessage());
             }
-        }catch (Exception e){
-            System.out.println("LoadTestError --- " + e.getMessage() + e.getStackTrace());
         }
     }
 
     private static String prepareExpectedValueByPsiType(String expectedValue, String returnType){
         System.out.println(returnType);
-        if(returnType.equals("PsiType:String")){
+        if(expectedValue == null || returnType == null)
+            return expectedValue;
+        else if(returnType.equals("PsiType:String")){
             return "\""+expectedValue+"\"";
         }else if (returnType.equals("PsiType:Integer")){
             return "Integer.valueOf("+expectedValue+")";
@@ -59,7 +57,6 @@ public class LoadTestToRepair {
     }
 
     private static String getExpectedTypeFromMethod(PsiMethod testMethod){
-
         PsiCodeBlock codeBlock = testMethod.getBody();
         if (codeBlock == null)
             return null;
@@ -91,11 +88,6 @@ public class LoadTestToRepair {
             }
             return actualParameter.getType().toString();
         }
-        return null;
-    }
-
-    private static String getAssertionTypeFromMethod(PsiMethod testMethod) {
-        //TODO doplnit univerzalne zistenie typu asercie a jej opravy
         return null;
     }
 }

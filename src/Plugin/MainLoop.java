@@ -1,5 +1,6 @@
 package Plugin;
 
+import TestOperations.LoadTestToRepair;
 import TestOperations.TestCoverageInformations;
 import TestOperations.TestModel;
 import TestOperations.TestRepair;
@@ -53,7 +54,7 @@ public class MainLoop {
         System.out.println("---------------------------- Modified methods -------------------------------");
         TestModel.printAllClassMethodPair();
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        TestRepair.repairTestsByModifiedMethods();
+        LoadTestToRepair.prepareTestsForRepair();
 
         ds.resetLastChangeTimeMillis();
     }
