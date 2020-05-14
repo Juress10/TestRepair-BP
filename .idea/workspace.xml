@@ -3,16 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eb0d8999-b80a-4aae-9b08-2fc4c6381067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/Plugin/MainLoop$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BP-implementácia/Plugin/MainLoop$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/Plugin/MainLoop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BP-implementácia/Plugin/MainLoop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/TestOperations/TestExecution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/resources/DataStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BP-implementácia/resources/DataStore.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/utils/FileUtils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Plugin/MainLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plugin/MainLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestOperations/TestExecution.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/listeners/DocumentListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listeners/DocumentListenerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/resources/DataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/DataStore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/FileUtils.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/listeners/DocumentListenerImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+            <state relative-caret-position="346">
+              <caret line="76" column="135" selection-start-line="76" selection-start-column="135" selection-end-line="76" selection-end-column="135" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Plugin/MainLoop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+            <state relative-caret-position="760">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,8 +40,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestOperations/TestCoverageInformations.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="29" column="85" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
+            <state relative-caret-position="238">
+              <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -164,7 +154,6 @@
         <option value="$PROJECT_DIR$/src/ProjectInfo/MethodInfo.java" />
         <option value="$PROJECT_DIR$/src/ProjectInfo/TestMethodInfo.java" />
         <option value="$PROJECT_DIR$/src/listeners/ProjectManagerListenerImpl.java" />
-        <option value="$PROJECT_DIR$/src/TestOperations/TestCoverageInformations.java" />
         <option value="$PROJECT_DIR$/src/TestOperations/LoadTestToRepair.java" />
         <option value="$PROJECT_DIR$/src/TestOperations/JUnit.java" />
         <option value="$PROJECT_DIR$/src/TestOperations/TestRepair.java" />
@@ -172,6 +161,7 @@
         <option value="$PROJECT_DIR$/src/resources/TestingAndExamples.java" />
         <option value="$PROJECT_DIR$/src/resources/DataStore.java" />
         <option value="$PROJECT_DIR$/src/Plugin/MainLoop.java" />
+        <option value="$PROJECT_DIR$/src/TestOperations/TestCoverageInformations.java" />
         <option value="$PROJECT_DIR$/src/listeners/DocumentListenerImpl.java" />
       </list>
     </option>
@@ -247,8 +237,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,6 +345,21 @@
       <option name="presentableId" value="Default" />
       <updated>1588758998099</updated>
     </task>
+    <task id="LOCAL-00001" summary="OK - pridanie timeru na opravu testov">
+      <created>1589486117163</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1589486117163</updated>
+    </task>
+    <task id="LOCAL-00002" summary="OK - test rerollu">
+      <created>1589486814734</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1589486814734</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -366,7 +371,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1818792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1818792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -376,15 +381,15 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.16572239" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.16572239" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.09206799" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.14305949" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.6691275" visible="true" weight="0.17705382" />
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067115" side_tool="true" weight="0.23796034" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.33087248" side_tool="true" visible="true" weight="0.17705382" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.1388102" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -396,6 +401,21 @@
       <window_info anchor="right" id="Capture Analysis" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="OK - pridanie timeru na opravu testov" />
+    <MESSAGE value="OK - test rerollu" />
+    <option name="LAST_COMMIT_MESSAGE" value="OK - test rerollu" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BP-implementácia.iml">
@@ -495,13 +515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestOperations/TestCoverageInformations.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="29" column="85" selection-start-line="29" selection-start-column="85" selection-end-line="29" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestOperations/LoadTestToRepair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -569,16 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Plugin/MainLoop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="36" column="40" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/resources/DataStore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
@@ -593,10 +596,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Plugin/MainLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestOperations/TestCoverageInformations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/listeners/DocumentListenerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="346">
+          <caret line="76" column="135" selection-start-line="76" selection-start-column="135" selection-end-line="76" selection-end-column="135" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
