@@ -12,7 +12,6 @@ public class Button extends AnAction {
 
     @Override
     public void actionPerformed(AnActionEvent e) {
-        //System.out.println(DataStore.getInstance().getDelay());
 
         if (MainLoop.isRunning == false) {
             MainLoop main = new MainLoop();

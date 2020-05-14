@@ -27,24 +27,6 @@ public class VirtualFileUtils {
     private VirtualFileUtils() {
     }
 
-    public static void getAllProjectFiles(Project project) {
-
-        VirtualFile[] children = project.getProjectFile().getChildren();
-        Collection<VirtualFile> files = null;
-        try {
-            files = FileTypeIndex.getFiles(JavaFileType.INSTANCE, GlobalSearchScope.projectScope(project));
-        }catch (Exception e){
-            System.out.println(e.getStackTrace());
-        }
-        for (VirtualFile f : files) {
-            PsiFile psiFile = PsiManager.getInstance(project).findFile(f);
-            PsiJavaFile psiJavaFile = (PsiJavaFile) psiFile;
-            final PsiClass[] classes = psiJavaFile.getClasses();
-            System.out.println(classes[0].getMethods()[0].getBody().getText());
-        }
-        System.out.println("Number of files in project: "+ files.size());
-    }
-
     public static VirtualFile getVirtualFile(Document document) {
         VirtualFile virtualFile = FileDocumentManager.getInstance().getFile(document);
         if (virtualFile == null) {
