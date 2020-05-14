@@ -59,6 +59,7 @@ public class DocumentListenerImpl implements DocumentListener {
         }
 
         ds.resetLastChangeTimeMillis();
+        ds.resetLastChangeTimeMillisForTestRepair();
         System.out.println("zmena");
 
         ArrayList<ClassInfo> oldFiles= TestModel.getOldClasses();

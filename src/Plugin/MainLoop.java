@@ -21,8 +21,6 @@ public class MainLoop {
     private static boolean executeRunning = false;
 
     public MainLoop() {
-        // Wait for project to load
-        //whileProjectNotReady();
 
         isRunning = true;
         try {
@@ -34,8 +32,10 @@ public class MainLoop {
                         executeRunning = true;
 
                         execute();
-                        TestRepair.repairAllTests();
-
+                        if(ds.testRepairDelayElapsed()) {
+                            TestRepair.repairAllTests();
+                            ds.resetLastChangeTimeMillisForTestRepair();
+                        }
                         executeRunning = false;
                     }
 
@@ -52,16 +52,10 @@ public class MainLoop {
 
     private void execute(){
 
-        /*if(stage == 1) {
-            System.out.println("----------------------------------- Stage 2 ---------------------------------");
-            TestCoverageInformations.initializeCoverageMap();
-        }else if(stage > 2){
-            //if (!TestModel.isMapEmpty())//TODO dopln kontrolu ci je mapa prazdna
-        */
-            System.out.println("---------------------------- Modified methods -------------------------------");
-            TestModel.printAllClassMethodPair();
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-            TestRepair.repairTestsByModifiedMethods();
+        System.out.println("---------------------------- Modified methods -------------------------------");
+        TestModel.printAllClassMethodPair();
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        TestRepair.repairTestsByModifiedMethods();
 
         ds.resetLastChangeTimeMillis();
     }
@@ -70,18 +64,4 @@ public class MainLoop {
         ApplicationManager.getApplication().invokeAndWait(() -> ApplicationManager.getApplication()
                 .runWriteAction(() -> FileDocumentManager.getInstance().saveAllDocuments()));
     }
-/*
-    private void whileProjectNotReady() {
-        while (ds.getActiveProject() == null) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                new TestCoverageThread().start();
-                LOGGER.log(Level.SEVERE, "Thread {0} interrupted forcefully. Thread restarted.",
-                        Thread.currentThread().getName());
-                Thread.currentThread().interrupt();
-            }
-        }
-    }
-*/
 }

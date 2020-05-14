@@ -21,6 +21,7 @@ public class DataStore {
     private Project activeProject;
     // Timestamp of last source code change in editor
     private static long lastChangeTimeMillis = 0;
+    private static long lastChangeTimeMillisForTestRepair = 0;
     public static synchronized DataStore getInstance() {
         return ourInstance;
     }
@@ -29,7 +30,7 @@ public class DataStore {
     }
 
     /*
-     * Active project
+     *  Project
      * */
     public Project getActiveProject() {
         return activeProject;
@@ -77,4 +78,16 @@ public class DataStore {
     public boolean repairDelayElapsed() {
         return System.currentTimeMillis() - lastChangeTimeMillis > REPAIR_DELAY;
     }
+
+    /*
+     * Repair timestamp
+     * */
+    public boolean testRepairDelayElapsed() {
+        return System.currentTimeMillis() - lastChangeTimeMillisForTestRepair > REPAIR_DELAY;
+    }
+
+    public void resetLastChangeTimeMillisForTestRepair() {
+        this.lastChangeTimeMillisForTestRepair = System.currentTimeMillis();
+    }
+
 }
