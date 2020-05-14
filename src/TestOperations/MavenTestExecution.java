@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class JUnit {
+public class MavenTestExecution {
 //maven way
 //mvn -f "C:\subory\Bakalarka\bakalarka implementacia\pom.xml" test -Dtest=StringUtilsTest#testToString
 

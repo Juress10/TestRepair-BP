@@ -8,7 +8,7 @@ package listeners;
 import ProjectInfo.ClassInfo;
 import ProjectInfo.ClassMethodPair;
 import ProjectInfo.MethodInfo;
-import TestOperations.TestModel;
+import TestOperations.TestDataStore;
 import com.intellij.ide.highlighter.JavaFileType;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.editor.event.DocumentEvent;
@@ -16,17 +16,13 @@ import com.intellij.openapi.editor.event.DocumentListener;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.*;
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang3.reflect.MethodUtils;
 import resources.DataStore;
 import utils.VirtualFileUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 public class DocumentListenerImpl implements DocumentListener {
 
@@ -56,7 +52,7 @@ public class DocumentListenerImpl implements DocumentListener {
         ds.resetLastChangeTimeMillisForTestRepair();
         System.out.println("zmena");
 
-        ArrayList<ClassInfo> oldFiles= TestModel.getOldClasses();
+        ArrayList<ClassInfo> oldFiles= TestDataStore.getOldClasses();
         final PsiFileFactory factory = PsiFileFactory.getInstance(ds.getInstance().getActiveProject());
         PsiFile file = factory.createFileFromText("subor.java", JavaFileType.INSTANCE, event.getDocument().getText());
 
@@ -74,8 +70,8 @@ public class DocumentListenerImpl implements DocumentListener {
                                 for (PsiMethod newMethod : newMethods) {
                                     if (newMethod.getName().equals(oldMethod.getMethodName())) {
                                         if (!newMethod.getText().equals(oldMethod.getMethodBody())) {
-                                            if (!TestModel.findClassMethodPair(new ClassMethodPair(old.toString(), newMethod.getName()))) {
-                                                TestModel.addModifiedClassMethod(new ClassMethodPair(old.toString(), newMethod.getName()));
+                                            if (!TestDataStore.findClassMethodPair(new ClassMethodPair(old.toString(), newMethod.getName()))) {
+                                                TestDataStore.addModifiedClassMethod(new ClassMethodPair(old.toString(), newMethod.getName()));
                                             }
                                         }
                                     }

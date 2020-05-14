@@ -6,7 +6,7 @@
 package listeners;
 
 import TestOperations.TestCoverageInformations;
-import TestOperations.TestModel;
+import TestOperations.TestDataStore;
 import com.intellij.ide.highlighter.JavaFileType;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
@@ -19,12 +19,9 @@ import com.intellij.util.indexing.FileBasedIndex;
 import org.jetbrains.annotations.NotNull;
 
 import resources.DataStore;
-import utils.VirtualFileUtils;
 
 import java.util.Collection;
 import java.util.Objects;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,7 +37,7 @@ public class ProjectManagerListenerImpl implements VetoableProjectManagerListene
         initListeners(project); // Init listeners dependent on current project
 
         ApplicationManager.getApplication().runReadAction(() -> {
-            TestModel.loadAllTestClasses();
+            TestDataStore.loadAllTestClasses();
 
             TestCoverageInformations.initializeCoverageMap();
         });

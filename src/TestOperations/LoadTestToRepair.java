@@ -3,9 +3,7 @@ package TestOperations;
 import ProjectInfo.ClassMethodPair;
 import ProjectInfo.TestMethodInfo;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.psi.*;
-import resources.DataStore;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,7 +13,7 @@ public class LoadTestToRepair {
 
     public static void prepareTestsForRepair(){
 
-        Map<Integer, ClassMethodPair> modifiedClassMethods = TestModel.getModifiedClassMethods();
+        Map<Integer, ClassMethodPair> modifiedClassMethods = TestDataStore.getModifiedClassMethods();
         for ( Iterator<ClassMethodPair> iterator = modifiedClassMethods.values().iterator(); iterator.hasNext();) {
             ClassMethodPair classMethodPair = iterator.next();
             try {
@@ -23,7 +21,7 @@ public class LoadTestToRepair {
                     ArrayList<PsiMethod> testPsiMethods = TestCoverageInformations.getTestMethodsNameByMethodName(classMethodPair.toString());
                     if (testPsiMethods != null) {
                         for (PsiMethod testPsiMethod : testPsiMethods) {
-                            String result = JUnit.executeTest(testPsiMethod.getContainingClass().getName() + "#" + testPsiMethod.getName());
+                            String result = MavenTestExecution.executeTest(testPsiMethod.getContainingClass().getName() + "#" + testPsiMethod.getName());
                             if (result != null) {
                                 System.out.println("Test Name : [" + testPsiMethod.getName() + "]");
                                 System.out.println("Return type : [" + getExpectedTypeFromMethod(testPsiMethod) + "] expected value : [" + result + "]");
@@ -31,7 +29,7 @@ public class LoadTestToRepair {
                                 String correctValue = prepareExpectedValueByPsiType(result, getExpectedTypeFromMethod(testPsiMethod));
                                 if(correctValue == null)
                                     correctValue = "null";
-                                TestModel.addTestMethodToRepair(new TestMethodInfo(testPsiMethod,correctValue));
+                                TestDataStore.addTestMethodToRepair(new TestMethodInfo(testPsiMethod,correctValue));
                             }
                         }
                     }

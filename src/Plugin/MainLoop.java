@@ -1,8 +1,7 @@
 package Plugin;
 
 import TestOperations.LoadTestToRepair;
-import TestOperations.TestCoverageInformations;
-import TestOperations.TestModel;
+import TestOperations.TestDataStore;
 import TestOperations.TestRepair;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
@@ -10,8 +9,6 @@ import resources.DataStore;
 
 import java.util.Timer;
 import java.util.TimerTask;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class MainLoop {
 
@@ -52,7 +49,7 @@ public class MainLoop {
     private void execute(){
 
         System.out.println("---------------------------- Modified methods -------------------------------");
-        TestModel.printAllClassMethodPair();
+        TestDataStore.printAllClassMethodPair();
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         LoadTestToRepair.prepareTestsForRepair();
 

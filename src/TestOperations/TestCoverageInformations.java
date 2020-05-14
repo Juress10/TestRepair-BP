@@ -3,13 +3,8 @@ package TestOperations;
 import ProjectInfo.ClassInfo;
 import ProjectInfo.MethodInfo;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.WriteCommandAction;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.*;
-import com.intellij.psi.util.PsiElementFilter;
-import com.intellij.psi.util.PsiTreeUtil;
 import resources.DataStore;
-import utils.VirtualFileUtils;
 
 import java.util.*;
 
@@ -25,7 +20,7 @@ public class TestCoverageInformations {
         methodsTestCoverageMap = new HashMap<String, ArrayList<PsiMethod>>();
         ApplicationManager.getApplication().runReadAction(() -> {
             try {
-                for (ClassInfo testClass : TestModel.getOldTestClasses()) {
+                for (ClassInfo testClass : TestDataStore.getOldTestClasses()) {
                     for (MethodInfo testMethod : testClass.getClassMethods()) {
                         PsiCodeBlock codeBlock = testMethod.getPsiMethod().getBody();
 
@@ -115,7 +110,7 @@ public class TestCoverageInformations {
     //----------------------------------------------------------------------------------------------------------------//
 
     private static boolean classExistanceInProject(String name){
-        if(TestModel.isProjectClass(name))
+        if(TestDataStore.isProjectClass(name))
             return true;
         else
             return false;

@@ -4,19 +4,13 @@
  * */
 package TestOperations;
 
-import ProjectInfo.ClassMethodPair;
 import ProjectInfo.TestMethodInfo;
-import com.intellij.ide.ui.EditorOptionsTopHitProvider;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.WriteCommandAction;
-import com.intellij.openapi.editor.EditorModificationUtil;
 import com.intellij.psi.*;
 import resources.DataStore;
 
-import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -25,7 +19,7 @@ public class TestRepair {
     public static void repairAllTests(){
         System.out.println("--- All Test Repairing ---");
 
-        for ( Iterator<TestMethodInfo> iterator = TestModel.getTestMethodsToRepair().values().iterator(); iterator.hasNext();) {
+        for (Iterator<TestMethodInfo> iterator = TestDataStore.getTestMethodsToRepair().values().iterator(); iterator.hasNext();) {
             TestMethodInfo testMethod = iterator.next();
 
             System.out.println("repairing: "+testMethod.getMethodName()+" with: "+testMethod.getValueToReplace());

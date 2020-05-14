@@ -15,7 +15,7 @@ import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
 
-public class TestModel {
+public class TestDataStore {
 
     static private ArrayList<ClassInfo> oldTestClasses = new ArrayList<ClassInfo>();
     static private ArrayList<ClassInfo> oldClasses = new ArrayList<ClassInfo>();
