@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb0d8999-b80a-4aae-9b08-2fc4c6381067" name="Default Changelist" comment="premiestnenie loadTests z TestRepair">
+    <list default="true" id="eb0d8999-b80a-4aae-9b08-2fc4c6381067" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/TestOperations/JUnit.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/TestOperations/LoadTestToRepair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BP-implementácia/TestOperations/LoadTestToRepair.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/TestOperations/TestCoverageInformations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BP-implementácia/TestOperations/TestCoverageInformations.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/TestOperations/TestModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/TestOperations/TestRepair.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BP-implementácia/TestOperations/TestRepair.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/listeners/DocumentListenerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BP-implementácia/listeners/DocumentListenerImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/BP-implementácia/listeners/ProjectManagerListenerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BP-implementácia/listeners/ProjectManagerListenerImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Plugin/MainLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Plugin/MainLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestOperations/JUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestOperations/MavenTestExecution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestOperations/LoadTestToRepair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestOperations/LoadTestToRepair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestOperations/TestCoverageInformations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestOperations/TestCoverageInformations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestOperations/TestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestOperations/TestDataStore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestOperations/TestDataStore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/TestDataStore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TestOperations/TestRepair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TestOperations/TestRepair.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/listeners/DocumentListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listeners/DocumentListenerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/listeners/ProjectManagerListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/listeners/ProjectManagerListenerImpl.java" afterDir="false" />
@@ -32,19 +29,28 @@
         <entry file="file://$PROJECT_DIR$/src/TestOperations/TestRepair.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="70" />
+              <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/listeners/DocumentListenerImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/listeners/DocumentListenerImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/resources/TestDataStore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="74" column="45" lean-forward="true" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -53,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/TestOperations/LoadTestToRepair.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1207">
-              <caret line="82" column="68" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="68" />
+              <caret line="83" column="68" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#prepareExpectedValueByPsiType#0;class#LoadTestToRepair#0" />
@@ -123,7 +129,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="705" />
-    <option name="y" value="-24" />
+    <option name="y" value="-25" />
     <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
@@ -190,7 +196,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1589491492247" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1589491950347" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -307,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589488915494</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="premenovanie JUnit, TestModel">
+      <created>1589491527525</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1589491527525</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -328,7 +341,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1818792" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1818792" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -338,7 +351,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.22804533" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" visible="true" weight="0.21104816" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.09206799" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -365,7 +378,8 @@
     <MESSAGE value="OK - test rerollu 2" />
     <MESSAGE value="Revert &quot;OK - pridanie timeru na opravu testov&quot;&#10;&#10;This reverts commit adcdaa08a4ba73dc7f5652e48ff7d16e709d4cc0.&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;src/Plugin/MainLoop.java" />
     <MESSAGE value="premiestnenie loadTests z TestRepair" />
-    <option name="LAST_COMMIT_MESSAGE" value="premiestnenie loadTests z TestRepair" />
+    <MESSAGE value="premenovanie JUnit, TestModel" />
+    <option name="LAST_COMMIT_MESSAGE" value="premenovanie JUnit, TestModel" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/BP-implementácia.iml">
@@ -459,16 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestOperations/TestDataStore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="method#isProjectClass#0;class#TestModel#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/META-INF/plugin.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -529,14 +533,14 @@
     <entry file="file://$PROJECT_DIR$/src/TestOperations/TestRepair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="70" />
+          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestOperations/LoadTestToRepair.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
-          <caret line="82" column="68" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="68" />
+          <caret line="83" column="68" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#prepareExpectedValueByPsiType#0;class#LoadTestToRepair#0" />
@@ -556,11 +560,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/listeners/DocumentListenerImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="74" column="45" lean-forward="true" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+        <state relative-caret-position="382">
+          <caret line="75" column="41" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/TestDataStore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="33" column="37" lean-forward="true" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
         </state>
       </provider>
     </entry>

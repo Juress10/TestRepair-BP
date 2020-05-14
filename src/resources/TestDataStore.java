@@ -1,4 +1,4 @@
-package TestOperations;
+package resources;
 
 import ProjectInfo.ClassInfo;
 import ProjectInfo.ClassMethodPair;

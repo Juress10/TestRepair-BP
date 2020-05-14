@@ -6,7 +6,7 @@
 package listeners;
 
 import TestOperations.TestCoverageInformations;
-import TestOperations.TestDataStore;
+import resources.TestDataStore;
 import com.intellij.ide.highlighter.JavaFileType;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;

@@ -9,6 +9,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.psi.*;
 import resources.DataStore;
+import resources.TestDataStore;
 
 import java.util.Iterator;
 

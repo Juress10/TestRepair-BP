@@ -1,7 +1,7 @@
 package Plugin;
 
 import TestOperations.LoadTestToRepair;
-import TestOperations.TestDataStore;
+import resources.TestDataStore;
 import TestOperations.TestRepair;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
