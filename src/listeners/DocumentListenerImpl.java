@@ -35,12 +35,6 @@ public class DocumentListenerImpl implements DocumentListener {
 
     @Override
     public void beforeDocumentChange(DocumentEvent event) {
-        /*VirtualFile virtualFile = VirtualFileUtils.getVirtualFile(event.getDocument());
-        if (!ds.existsUnmodifiedFile(virtualFile.getPath())) {
-            ds.addUnmodifiedFile(virtualFile.getPath(),
-                    Arrays.stream(event.getDocument().getText().split("\n")).map(String::trim)
-                            .collect(Collectors.toList()));
-        }*/
     }
 
     @Override
@@ -81,7 +75,6 @@ public class DocumentListenerImpl implements DocumentListener {
                                 if(newMethod.getName().equals(oldMethod.getMethodName())){
                                     if(!newMethod.getText().equals(oldMethod.getMethodBody())) {
                                         if (!TestModel.findClassMethodPair(new ClassMethodPair(old.toString(), newMethod.getName()))) {
-                                            //System.out.println(newMethod.getName());
                                             TestModel.addModifiedClassMethod(new ClassMethodPair(old.toString(), newMethod.getName()));
                                         }
                                     }
@@ -92,34 +85,6 @@ public class DocumentListenerImpl implements DocumentListener {
                 }
             }
         }
-/*
-        if (file instanceof PsiJavaFile) {
-
-            PsiJavaFile psiJavaFile = (PsiJavaFile) file;
-            final PsiClass[] classes = psiJavaFile.getClasses();
-
-            for (PsiClass psiClass : classes) {
-                PsiMethod[] methods = psiClass.getMethods();
-                for (PsiMethod method : methods) {
-                    System.out.println(method.getName());
-                }
-            }
-        }
-*/
-        /*if (oldLine.equalsIgnoreCase(newLine)) {
-            ds.removeChangedLine(virtualFile.getPath(), lineNumber);
-            CovFile covFile = ds.getCovFile(virtualFile.getPath());
-
-            if (!covFile.existsCovLine(lineNumber)) {
-                Highlighter.removeLineHighlight(event.getDocument(), lineNumber);
-            }
-
-        } else {
-            ds.addChangedLine(virtualFile.getPath(), lineNumber);
-            ds.resetLastChangeTimeMillis();
-            Highlighter
-                    .addLineHighlight(event.getDocument(), lineNumber, Highlighter.HighlightType.EDIT, false, "Line changed");
-        }*/
     }
 
 

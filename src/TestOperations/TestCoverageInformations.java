@@ -222,23 +222,4 @@ public class TestCoverageInformations {
         }
         return null;
     }
-
-
-
-    private static void recursiveSearch(PsiElement element) {
-        //TODO https://intellij-support.jetbrains.com/hc/en-us/community/posts/207086955-How-to-get-all-variables-within-a-PsiClass-global-and-local-variables-
-        /*System.out.println("Class : "+testClass.getTestClass().getName());
-        final PsiElement[] vars = PsiTreeUtil.collectElements(testClass.getTestClass(), new PsiElementFilter() {
-            public boolean isAccepted(PsiElement e) {
-                if (e instanceof PsiVariable) {
-                    return true;
-                }
-                return false;
-            }
-        });
-        for (PsiElement el : vars) {
-            System.out.println(el.toString());
-        }*/
-    }
-
 }

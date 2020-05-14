@@ -27,19 +27,17 @@ public class MainLoop {
             TimerTask timerTask = new TimerTask() {
                 @Override
                 public void run() {
-                   // ApplicationManager.getApplication().runReadAction(() -> {
-                    if(!executeRunning && ds.testDelayElapsed()) {
-                        executeRunning = true;
 
-                        execute();
-                        if(ds.testRepairDelayElapsed()) {
-                            TestRepair.repairAllTests();
-                            ds.resetLastChangeTimeMillisForTestRepair();
-                        }
-                        executeRunning = false;
+                if(!executeRunning && ds.testDelayElapsed()) {
+                    executeRunning = true;
+
+                    execute();
+                    if(ds.testRepairDelayElapsed()) {
+                        TestRepair.repairAllTests();
+                        ds.resetLastChangeTimeMillisForTestRepair();
                     }
-
-                   // });
+                    executeRunning = false;
+                }
                 }
             };
             Timer timer = new Timer();
