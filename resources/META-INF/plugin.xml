@@ -1,0 +1,42 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>TestReapir</name>
+  <version>1.0</version>
+  <vendor email="" url="">TestReapir</vendor>
+
+  <description>Implementacia bakalarskej prace Juraj Durej.</description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+  </extensions>
+
+  <actions>
+    <group id="Screen" text="Tester Plugin" description="Main window of plugin" >
+      <add-to-group group-id="MainMenu" anchor="last"/>
+      <action class="Plugin.Button" id="runtest" text="Launch plugin" />
+    </group>
+  </actions>
+
+  <application-components>
+    <!-- Add your application components here -->
+    <component>
+      <implementation-class>Plugin.PluginRegistration</implementation-class>
+    </component>
+  </application-components>
+
+</idea-plugin>
